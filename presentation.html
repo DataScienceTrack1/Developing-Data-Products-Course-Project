@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products | Course Project Presentation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products | Course Project Presentation">
+  <meta name="author" content="Data Science Specialization Student">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products | Course Project Presentation</h1>
+    <h2></h2>
+    <p>Data Science Specialization Student<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The Context</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>This presentation is being created as part of the peer assessment process for the Developing Data Products course offered through Coursera. </p></li>
+<li><p>This assignment is geared toward ensuring the following concepts are well understood by the students:</p>
+
+<ul>
+<li>Utilizing <strong>SHINY</strong> to build a data product application.</li>
+<li>Utilizing <strong>SLIDIFY</strong> or <strong>R PRESENTER</strong> to create a presentation about the data product application developed.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>The Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>To display the understanding of using Shiny to build an application, a simple application to calculate the MPG (miles per gallon) of a hypothetical automobile has been developed and deployed at: </p>
+
+<ul>
+<li><a href="https://datasciencetrack1.shinyapps.io/MPG_Prediction/">https://datasciencetrack1.shinyapps.io/MPG_Prediction/</a></li>
+</ul></li>
+<li><p>This application allows the user to make calculations for a hypothetical automobile by using a selected model developed from the mtcars dataset in R, then selecting a couple of variables about this hypothetical vehicle.</p>
+
+<ul>
+<li>The application produces the resultant estimated MPG (miles per gallon) rating of the hypothetical automobile, in addition to other information about the calculations that led to this MPG valuation.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The Computation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>The application concept is to utilize the mtcars dataset to provide a baseline from which to develop various prediction models for estimating the MPG (miles per gallon) rating of a hypothetical automobile, based on that car&#39;s transmission type and number of cylinders.</p></li>
+<li><p>Once a model is selected and the transmission type/number of cylinders are selected, a MPG prediction is produced.</p>
+
+<ul>
+<li>Further information about this process is explained in the app&#39;s documentation.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The computation results in a MPG (miles per gallon) estimate produced from models developed from the mtcars dataset, with additional explanatory information produced that explains how the prediction was actually developed.</li>
+<li>  To summarize, this application has 
+
+<ul>
+<li>Widgets: Dropdowns, radio buttons, summaries, data table, etc.</li>
+<li>Some operations on the ui input in server.R</li>
+<li>Some reactive output, displayed as a result of server calculations</li>
+<li>Documentation support</li>
+</ul></li>
+<li>  Further development of this app will lead to updates of the data set of automobile information (MPG, Transmission Type, Number of Cylinders, etc.) for automobiles through the year 2015 and beyond, for even more accurate and up-to-date MPG estimate predictions.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The Context'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The Application'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Computation'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Summary'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
