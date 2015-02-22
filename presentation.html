@@ -13,8 +13,7 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
-
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
@@ -89,11 +88,22 @@
   <article data-timings="">
     <ul>
 <li><p>The application concept is to utilize the mtcars dataset to provide a baseline from which to develop various prediction models for estimating the MPG (miles per gallon) rating of a hypothetical automobile, based on that car&#39;s transmission type and number of cylinders.</p></li>
-<li><p>Once a model is selected and the transmission type/number of cylinders are selected, a MPG prediction is produced.</p>
+<li><p>The following is a sample of the R code used to produce the prediction:</p>
 
-<ul>
-<li>Further information about this process is explained in the app&#39;s documentation.</li>
-</ul></li>
+<pre><code class="r">output$prediction = renderPrint({
+intmsn &lt;- ifelse(input$tmsn == &quot;Automatic&quot;, &quot;A&quot;, &quot;M&quot;)
+newdatadf &lt;- switch(input$model,
+                    amcyl = data.frame(tmsn = intmsn, cyl = as.numeric(input$numcyl)),
+                    amcylint = data.frame(tmsn = intmsn, cyl = as.numeric(input$numcyl)),
+                    amgear = data.frame(tmsn = intmsn, gear = as.numeric(input$numgear)),
+                    amgearint = data.frame(tmsn = intmsn, gear = as.numeric(input$numgear)),
+                    amcylgear = data.frame(tmsn = intmsn, cyl = as.numeric(input$numcyl),
+                                           gear = as.numeric(input$numgear)),
+                    data.frame(tmsn = intmsn, as.numeric(input$numcyl)))
+outcome &lt;- predict(modeldata(), newdata=newdatadf)
+paste(&quot;The predicted MPG outcome is: &quot;, outcome)
+})
+</code></pre></li>
 </ul>
 
   </article>

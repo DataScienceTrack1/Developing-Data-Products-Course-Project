@@ -35,8 +35,22 @@ knit        : slidify::knit2slides
 
 * The application concept is to utilize the mtcars dataset to provide a baseline from which to develop various prediction models for estimating the MPG (miles per gallon) rating of a hypothetical automobile, based on that car's transmission type and number of cylinders.
 
-* Once a model is selected and the transmission type/number of cylinders are selected, a MPG prediction is produced.
-  + Further information about this process is explained in the app's documentation.
+* The following is a sample of the R code used to produce the prediction:
+```r
+  output$prediction = renderPrint({
+    intmsn <- ifelse(input$tmsn == "Automatic", "A", "M")
+    newdatadf <- switch(input$model,
+                        amcyl = data.frame(tmsn = intmsn, cyl = as.numeric(input$numcyl)),
+                        amcylint = data.frame(tmsn = intmsn, cyl = as.numeric(input$numcyl)),
+                        amgear = data.frame(tmsn = intmsn, gear = as.numeric(input$numgear)),
+                        amgearint = data.frame(tmsn = intmsn, gear = as.numeric(input$numgear)),
+                        amcylgear = data.frame(tmsn = intmsn, cyl = as.numeric(input$numcyl),
+                                               gear = as.numeric(input$numgear)),
+                        data.frame(tmsn = intmsn, as.numeric(input$numcyl)))
+    outcome <- predict(modeldata(), newdata=newdatadf)
+    paste("The predicted MPG outcome is: ", outcome)
+  })
+```
 
 ---
 
